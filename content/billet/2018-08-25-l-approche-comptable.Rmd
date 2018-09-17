@@ -146,7 +146,7 @@ Ou bien, pour le Royaume-Unis, d'après le trés officiel
 [rapport](http://obr.uk/efo/economic-fiscal-outlook-march-2018/) *Economic and fiscal outlook* de l'office 
 pour la responsabilité budgétaire :
 
-![Balances sectorielles du Royaume-Uni](/post/2018-08-25-l-approche-comptable_files/obr_2018.png)
+![Balances sectorielles du Royaume-Uni](/billet/2018-08-25-l-approche-comptable_files/obr_2018.png)
 
 (Avec: *public* = secteur publique, *households* + *Corporate* = secteur privé, *rest of world* = secteur étranger,
 *discrepency* = anomalies résiduelles liés aux érreures d'éstimations.)
