@@ -68,14 +68,14 @@ copyright = ""            # default: author.name ↓
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
   toc = true                                                                           
   autoCollapseToc = false   # Auto expand and collapse toc                             
-  fancybox = false           # see https://github.com/fancyapps/fancybox               
+  fancybox = true           # see https://github.com/fancyapps/fancybox               
   mathjax = false           # see https://www.mathjax.org/                            
   mathjaxEnableSingleDollar = false                                                   
   mathjaxEnableAutoNumber = false                                                     
 
   postMetaInFooter = true   # contain author, lastMod, markdown link, license          
   linkToMarkDown = false    # Only effective when hugo will output .md files.         
-  contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'     # e.g. '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+  contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>'     # e.g. '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 
   changyanAppid = ""        # Changyan app id            
   changyanAppkey = ""       # Changyan app key
@@ -91,7 +91,7 @@ copyright = ""            # default: author.name ↓
   customJS = []
 
   [params.publicCDN]        # load these files from public cdn                       
-    enable = false
+    enable = true
     jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
     slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
     fancyboxJs = '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>'
