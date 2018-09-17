@@ -8,6 +8,8 @@ tags:
   - théorie monétaire moderne
   - comptabilité nationale
   - MMT
+  - Eurostat
+  - FRED
 header:
   caption: ''
   image: ''
@@ -17,12 +19,14 @@ mathjax: true
 
 
 
-<div id="la-dette-la-dette-la-dette" class="section level2">
-<h2>La dette ! La dette ! La dette !</h2>
+<div id="la-dette-la-dette-la-dette" class="section level3">
+<h3>La dette ! La dette ! La dette !</h3>
 <p>Le secteur publique Français est en déficit budgétaire depuis au moins les années 1980. Chaque année, l’état doit donc s’endéter, de plus en plus, pour faire face à ses dépenses. Conséquence direct : la dette publique explose.</p>
-<p><img src="/post/2018-08-25-l-approche-comptable_files/figure-html/deficitanddebt-1.png" width="672" /></p>
+<p><img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/deficitanddebt-1.png" width="672" /></p>
 <pre class="r"><code>library(tidyverse)
 library(eurostat)
+
+# eurostat data
 govdebt &lt;- get_eurostat(&quot;gov_10dd_edpt1&quot;) %&gt;% # found with search_eurostat(&quot;deficit&quot;)
     filter(geo == &quot;FR&quot;, unit == &quot;PC_GDP&quot;) %&gt;% # France, in %GDP 
     select(-unit) %&gt;%
@@ -62,18 +66,18 @@ cowplot::plot_grid(pldeficit, pldebt, ncol = 1)</code></pre>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div id="hypocrites" class="section level2">
-<h2>Hypocrites</h2>
+<div id="hypocrites" class="section level3">
+<h3>Hypocrites</h3>
 <p>Il est assez facile de dénoncer l’hypocrisie de tels propos. Les personnes scandalisées par des niveaux de déficits publiques excessifs “hypothétiquant l’avenir de leurs enfants” sont souvent beaucoup moins angoissées en ce qui concerne le réchaufement climatique, danger pourtant plus concret et menaçant. Curieusement aussi, ces même personnes ne se scandalisent pas pareil lorsqu’il s’agit de suprimer l’impôt sur la fortune ou de réduire la fiscalité du travail que lorsqu’il s’agit de combler le déficit de la sécu ou des caisses de retraites.</p>
 <p>Malgrés ces hypocrisies, ce discours de réduction des déficits garde un pouvoir de persuation : il semble rationelle, de bon sens. S’assurer, au long terme, de gagner suffisament d’argent pour pouvoir couvrir ses dépenses, n’est-ce pas là un principe de bonne gestion, après tout ?</p>
 </div>
-<div id="theorie-monetaire-moderne" class="section level2">
-<h2>Théorie monétaire moderne</h2>
+<div id="theorie-monetaire-moderne" class="section level3">
+<h3>Théorie monétaire moderne</h3>
 <p>La théorie monétaire moderne (Modern Monetary Theory, MMT en anglais, parfois aussi appelée neochartalisme) constitut un cadre théorique puissant et cohérant dénonçant l’inepsie de tels raisonements alarmistes et fétichistes sur les niveaux de dettes publiques. Elle explicite le fait que le gouvernement, en tant qu’autorité ultime garantissant le sytéme monétaire de son pays, n’est pas soumis aux même contraintes financières qu’un ménage ou qu’une entreprise.</p>
 <p>Il s’agit d’un théorie au sens scientifique, un cadre de pensée expliquant le réel, et non pas d’une “théorie” au sens policier, une simple hypothèse de travail. Contrairement à d’autres théories scientifiques, tels que la théorie quantique en physique ou la théorie neo-darwiniene de l’évolultion en biologie, la théorie monétaire moderne reste marginale dans son domaine. Elle n’en reste pas moins rigoureuse, appuyée par un large corpus académique produit par des universitaires reconnus, tels que Randal Wray, Bill Mitchel ou Stephanie Kelton. Un deuxiéme congrés international de la théorie monétaire moderne est organisé à l’automne. Un text-book est disponible, et il sera bientôt complété.</p>
 </div>
-<div id="balances-sectorielles" class="section level2">
-<h2>Balances sectorielles</h2>
+<div id="balances-sectorielles" class="section level3">
+<h3>Balances sectorielles</h3>
 <p>Ce premier billet, introductif, et donc incomplet et simplificateur, vous propose d’établir une compatibilité nationale pour en déduire une vérité toute bête : l’argent dépensé par le gouvernement, mais non récupéré via les taxes est impôts, cet argent constituant précisément le déficit publiqe, où finit-il ?</p>
 <p>Prenons l’exemple d’un pays seul utilisateur de sa monnaie, pour commencer en douceur, tels que, par exemple, la Pologne. La monnaie polonaise, le Zloty, est soit dans le secteur privé domestique (particuliers), soit dans le secteur publique (l’état polonais), soit à l’étranger. Les entreprises étant possédés pour partie par les polonnais, pour partie par l’état polonnais, pour partie par des particuliers ou gouvernements étrangers, leurs avoir monétaires sont donc répartie dans les trois catégories définies précédements.</p>
 <p>Ainsi :</p>
@@ -82,11 +86,12 @@ cowplot::plot_grid(pldeficit, pldebt, ncol = 1)</code></pre>
 <p><span class="math display">\[ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = \Delta masse\ monétaire\ totale \]</span></p>
 <p>En partant du principe que l’argent <em>ne sort pas de nul part</em> (nous y reviendrons) : <span class="math display">\[ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = 0\]</span></p>
 </div>
-<div id="exemples" class="section level2">
-<h2>Exemples</h2>
+<div id="exemples" class="section level3">
+<h3>Exemples</h3>
 <p>Il s’agit là d’une vérité comptable, vérifiable et vérifié. Par exemple, en ce qui concerne les Etats-Unis d’Amériques (d’après des données de la <em>FRED</em> de <a href="https://fred.stlouisfed.org/graph/?graph_id=480953">Saint-Louis</a>)</p>
-<p><img src="/post/2018-08-25-l-approche-comptable_files/figure-html/sectorialusa-1.png" width="672" /></p>
-<pre class="r"><code>sector_usa &lt;- read_csv(&quot;fredgraph.csv&quot;)
+<p><img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/sectorialusa-1.png" width="672" /></p>
+<pre class="r"><code># csv downloaded from https://fred.stlouisfed.org/graph/?graph_id=480953
+sector_usa &lt;- read_csv(&quot;fredgraph.csv&quot;)
 colnames(sector_usa) &lt;- c(&quot;date&quot;, &quot;private&quot;, &quot;foreign&quot;, &quot;publique&quot;) # renaming coloumns
 sector_usa &lt;- gather(sector_usa, key = &quot;sector&quot;, value = &quot;pctPIB&quot;, -date) # tidying
 ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
@@ -102,8 +107,8 @@ ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
 </div>
 <p>(Avec: <em>public</em> = secteur publique, <em>households</em> + <em>Corporate</em> = secteur privé, <em>rest of world</em> = secteur étranger, <em>discrepency</em> = anomalies résiduelles liés aux érreures d’éstimations.)</p>
 </div>
-<div id="conclusion" class="section level2">
-<h2>Conclusion</h2>
+<div id="conclusion" class="section level3">
+<h3>Conclusion</h3>
 <p>La conséquence directe de cette vérité comptable, c’est que pour qu’un des secteurs puisse être positif, il en faudra nécéssairement un qui soit négatif.</p>
 <p>Le secteur privé a souvent le désir d’accroître sa richesse au court du temps : pour que les ménages et entreprises soient satisfaits, ils souhaitent finir l’année un peu plus riche qu’ils ne l’ont commencé.</p>
 <p>Le cas du secteur étranger est un peu particulier. Il est généralement souhaitable qu’il soit équilibré, donc proche de 0 à terme (nous aurrons l’occasion de revenir dessus, notament dans le cas de l’Allemagne). Un des arguments à cela est qu’il ne peut, dans le monde, n’y avoir uniquement des pays exportateurs net, il en faudra a minima un qui soit importateur net !</p>

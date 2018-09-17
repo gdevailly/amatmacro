@@ -30,7 +30,7 @@ copyright = ""            # default: author.name ↓
   name = "Archives"
   weight = 20
   identifier = "archives"
-  url = "/post/"
+  url = "/billet/"
 [[menu.main]]
   name = "Catégories"
   weight = 30

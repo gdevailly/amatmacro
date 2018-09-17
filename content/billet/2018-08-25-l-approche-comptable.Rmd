@@ -8,6 +8,8 @@ tags:
   - théorie monétaire moderne
   - comptabilité nationale
   - MMT
+  - Eurostat
+  - FRED
 header:
   caption: ''
   image: ''
@@ -15,7 +17,7 @@ type: "post"
 mathjax: true  
 ---
 
-## La dette ! La dette ! La dette !
+### La dette ! La dette ! La dette !
 
 Le secteur publique Français est en déficit budgétaire depuis au moins les années 1980.
 Chaque année, l'état doit donc s'endéter, de plus en plus, pour faire face à ses dépenses.
@@ -24,6 +26,8 @@ Conséquence direct : la dette publique explose.
 ```{r deficitanddebt, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(eurostat)
+
+# eurostat data
 govdebt <- get_eurostat("gov_10dd_edpt1") %>% # found with search_eurostat("deficit")
     filter(geo == "FR", unit == "PC_GDP") %>% # France, in %GDP 
     select(-unit) %>%
@@ -65,7 +69,7 @@ Sinon, *la dette se vengera* !
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">&quot;La dette se vengera&quot; si le gouvernement ne gagne pas &quot;la bataille du désendettement&quot;, met en garde Pierre Moscovici<a href="https://t.co/c20qHKATVd">https://t.co/c20qHKATVd</a> <a href="https://t.co/wadGpfaiI4">pic.twitter.com/wadGpfaiI4</a></p>&mdash; franceinfo (@franceinfo) <a href="https://twitter.com/franceinfo/status/1032568130403479553?ref_src=twsrc%5Etfw">23 août 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Hypocrites
+### Hypocrites
 
 Il est assez facile de dénoncer l'hypocrisie de tels propos. Les personnes scandalisées par des niveaux de
 déficits publiques excessifs "hypothétiquant l'avenir de leurs enfants" sont souvent beaucoup moins angoissées
@@ -78,7 +82,7 @@ Malgrés ces hypocrisies, ce discours de réduction des déficits garde un pouvo
 S'assurer, au long terme, de gagner suffisament d'argent pour pouvoir couvrir ses dépenses, 
 n'est-ce pas là un principe de bonne gestion, après tout ?
 
-## Théorie monétaire moderne
+### Théorie monétaire moderne
 
 La théorie monétaire moderne (Modern Monetary Theory, MMT en anglais, parfois aussi appelée neochartalisme) constitut un cadre
 théorique puissant et cohérant dénonçant l'inepsie de tels raisonements alarmistes et fétichistes sur les niveaux de dettes publiques.
@@ -92,7 +96,7 @@ un large corpus académique produit par des universitaires reconnus, tels que Ra
 Un deuxiéme congrés international de la théorie monétaire moderne est organisé à l'automne. Un text-book est disponible, et il sera bientôt
 complété.
 
-## Balances sectorielles
+### Balances sectorielles
 
 Ce premier billet, introductif, et donc incomplet et simplificateur, vous propose d'établir une compatibilité nationale 
 pour en déduire une vérité toute bête : l'argent dépensé par le gouvernement, mais non récupéré via les taxes est impôts,
@@ -118,12 +122,13 @@ $$ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger
 En partant du principe que l'argent *ne sort pas de nul part* (nous y reviendrons) :
 $$ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = 0$$
 
-## Exemples
+### Exemples
 
 Il s'agit là d'une vérité comptable, vérifiable et vérifié. Par exemple, en ce qui concerne les Etats-Unis d'Amériques
 (d'après des données de la *FRED* de [Saint-Louis](https://fred.stlouisfed.org/graph/?graph_id=480953))
 
 ```{r sectorialusa, echo=FALSE, warning=FALSE, message=FALSE}
+# csv downloaded from https://fred.stlouisfed.org/graph/?graph_id=480953
 sector_usa <- read_csv("fredgraph.csv")
 colnames(sector_usa) <- c("date", "private", "foreign", "publique") # renaming coloumns
 sector_usa <- gather(sector_usa, key = "sector", value = "pctPIB", -date) # tidying
@@ -147,7 +152,7 @@ pour la responsabilité budgétaire :
 (Avec: *public* = secteur publique, *households* + *Corporate* = secteur privé, *rest of world* = secteur étranger,
 *discrepency* = anomalies résiduelles liés aux érreures d'éstimations.)
 
-## Conclusion
+### Conclusion
 
 La conséquence directe de cette vérité comptable, c'est que pour qu'un des secteurs puisse être positif,
 il en faudra nécéssairement un qui soit négatif.
