@@ -17,8 +17,8 @@ mathjax: true
 # La dette ! La dette ! La dette !
 
 Le secteur publique Français est en déficit budgétaire depuis au moins les années 1980.
-Chaque année, l'état doit donc s'endéter, de plus en plus, pour faire face à ses dépenses.
-Conséquence direct : la dette publique explose.
+Chaque année, l'état doit donc s’endetter, de plus en plus, pour faire face à ses dépenses.
+Conséquence directe : la dette publique explose.
 
 ```{r deficitanddebt, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -59,38 +59,40 @@ cowplot::plot_grid(pldeficit, pldebt, ncol = 1, align = "v")
 ```{r deficitanddebt, eval=FALSE}
 ```
 
-Il semble donc urgent de réduire les dépenses de l'état, augemnter ses recettes,
-afin commencer à rembourser une dette que nous ne voulons pas laisser cette dette à nos petits enfants.
+Il semble donc urgent de réduire les dépenses de l'état, augmenter ses recettes,
+afin commencer à rembourser une dette que nous ne voulons pas laisser cette dette à nos petits-enfants.
 Sinon, *la dette se vengera* !
 
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">&quot;La dette se vengera&quot; si le gouvernement ne gagne pas &quot;la bataille du désendettement&quot;, met en garde Pierre Moscovici<a href="https://t.co/c20qHKATVd">https://t.co/c20qHKATVd</a> <a href="https://t.co/wadGpfaiI4">pic.twitter.com/wadGpfaiI4</a></p>&mdash; franceinfo (@franceinfo) <a href="https://twitter.com/franceinfo/status/1032568130403479553?ref_src=twsrc%5Etfw">23 août 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
+
 # Hypocrites
 
 Il est assez facile de dénoncer l'hypocrisie de tels propos. Les personnes scandalisées par des niveaux de
-déficits publiques excessifs "hypothétiquant l'avenir de leurs enfants" sont souvent beaucoup moins angoissées
-en ce qui concerne le réchaufement climatique, danger pourtant plus concret et menaçant.
-Curieusement aussi, ces même personnes ne se scandalisent pas pareil
-lorsqu'il s'agit de suprimer l'impôt sur la fortune ou de réduire la fiscalité du travail 
+déficits publiques excessifs "hypothéquant l'avenir de leurs enfants" sont souvent beaucoup moins angoissées
+en ce qui concerne le réchauffement climatique, danger pourtant plus concret et menaçant.
+Curieusement aussi, ces mêmes personnes ne se scandalisent pas pareil
+lorsqu'il s'agit de supprimer l'impôt sur la fortune ou de réduire la fiscalité du travail 
 que lorsqu'il s'agit de combler le déficit de la sécu ou des caisses de retraites.
 
-Malgrés ces hypocrisies, ce discours de réduction des déficits garde un pouvoir de persuation : il semble rationelle, de bon sens.
-S'assurer, au long terme, de gagner suffisament d'argent pour pouvoir couvrir ses dépenses, 
+Malgré ces hypocrisies, ce discours de réduction des déficits garde un pouvoir de persuasion : il semble rationnel, de bon sens.
+S'assurer, au long terme, de gagner suffisamment d'argent pour pouvoir couvrir ses dépenses, 
 n'est-ce pas là un principe de bonne gestion, après tout ?
 
 # Théorie monétaire moderne
 
-La théorie monétaire moderne (Modern Monetary Theory, MMT en anglais, parfois aussi appelée neochartalisme) constitut un cadre
-théorique puissant et cohérant dénonçant l'inepsie de tels raisonements alarmistes et fétichistes sur les niveaux de dettes publiques.
-Elle explicite le fait que le gouvernement, en tant qu'autorité ultime garantissant le sytéme monétaire de son pays,
+La théorie monétaire moderne (*Modern Monetary Theory*, MMT en anglais, parfois aussi appelée néochartalisme) constitut un cadre
+théorique puissant et cohérant dénonçant l’ineptie de tels raisonnements alarmistes et fétichistes sur les niveaux de dettes publiques.
+Elle explicite le fait que le gouvernement, en tant qu'autorité ultime gérant le système monétaire de son pays,
 n'est pas soumis aux même contraintes financières qu'un ménage ou qu'une entreprise.
 
-Il s'agit d'un théorie au sens scientifique, un cadre de pensée expliquant le réel, et non pas d'une "théorie" au sens policier, une simple
-hypothèse de travail. Contrairement à d'autres théories scientifiques, tels que la théorie quantique en physique ou la théorie neo-darwiniene
-de l'évolultion en biologie, la théorie monétaire moderne reste marginale dans son domaine. Elle n'en reste pas moins rigoureuse, appuyée par
+Il s'agit d'une théorie au sens scientifique, un cadre de pensée expliquant le réel, et non pas d'une "théorie" au sens policier, une simple
+hypothèse de travail. Contrairement à d'autres théories scientifiques, tels que la théorie quantique en physique ou la théorie néodarwinienne
+de l’évolution  en biologie, la théorie monétaire moderne reste marginale dans son domaine. Elle n'en reste pas moins rigoureuse, appuyée par
 un large corpus académique produit par des universitaires reconnus, tels que Randal Wray, Bill Mitchel ou Stephanie Kelton.
-Un deuxiéme congrés international de la théorie monétaire moderne est organisé à l'automne. Un text-book est disponible, et il sera bientôt
+Un deuxième congrès international de la théorie monétaire moderne est organisé à l'automne. Un *text-book* est disponible, et il sera bientôt
 complété.
 
 # Balances sectorielles
