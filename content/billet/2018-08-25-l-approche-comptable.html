@@ -2,7 +2,7 @@
 title: L'approche comptable
 authors: 
   - Guillaume Devailly
-date: '2018-09-17'
+date: '2018-09-18'
 slug: l-approche-comptable
 tags:
   - théorie monétaire moderne
@@ -18,7 +18,7 @@ mathjax: true
 
 <div id="la-dette-la-dette-la-dette" class="section level1">
 <h1>La dette ! La dette ! La dette !</h1>
-<p>Le secteur publique Français est en déficit budgétaire depuis au moins les années 1980. Chaque année, l’état doit donc s’endetter, de plus en plus, pour faire face à ses dépenses. Conséquence directe : la dette publique explose.</p>
+<p>Le secteur public Français est en déficit budgétaire depuis au moins les années 1980. Chaque année, l’état doit donc s’endetter, de plus en plus, pour faire face à ses dépenses. Conséquence directe : la dette publique explose.</p>
 <p><img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/deficitanddebt-1.png" width="672" /></p>
 <pre class="r"><code>library(tidyverse)
 library(eurostat)
@@ -75,13 +75,13 @@ cowplot::plot_grid(pldeficit, pldebt, ncol = 1, align = &quot;v&quot;)</code></p
 </div>
 <div id="balances-sectorielles" class="section level1">
 <h1>Balances sectorielles</h1>
-<p>Ce premier billet, introductif, et donc incomplet et simplificateur, vous propose d’établir une compatibilité nationale pour en déduire une vérité toute bête : l’argent dépensé par le gouvernement, mais non récupéré via les taxes est impôts, cet argent constituant précisément le déficit publiqe, où finit-il ?</p>
-<p>Prenons l’exemple d’un pays seul utilisateur de sa monnaie, pour commencer en douceur, tels que, par exemple, la Pologne. La monnaie polonaise, le Zloty, est soit dans le secteur privé domestique (particuliers), soit dans le secteur publique (l’état polonais), soit à l’étranger. Les entreprises étant possédés pour partie par les polonnais, pour partie par l’état polonnais, pour partie par des particuliers ou gouvernements étrangers, leurs avoir monétaires sont donc répartie dans les trois catégories définies précédements.</p>
+<p>Ce premier billet, introductif, et donc incomplet et simplificateur, vous propose d’établir une compatibilité nationale pour en déduire une vérité toute bête : l’argent dépensé par le gouvernement, mais non récupéré via les taxes est impôts, cet argent constituant précisément le déficit public, où finit-il ?</p>
+<p>Prenons l’exemple d’un pays seul utilisateur de sa monnaie, pour commencer en douceur, tels que, par exemple, la Pologne. La monnaie polonaise, le Zloty, est soit dans le secteur privé domestique (particuliers), soit dans le secteur publique (l’état polonais), soit à l’étranger. Les entreprises étant possédés pour partie par les polonais, pour partie par l’état polonais, pour partie par des particuliers ou gouvernements étrangers, leurs avoir monétaires sont donc répartie dans les trois catégories définies précédemment.</p>
 <p>Ainsi :</p>
 <p><span class="math display">\[ secteur\ publique + secteur\ privé + secteur\ étranger = masse\ monétaire\ totale \]</span></p>
-<p>D’un an sur l’autre, le secteur publique à des dépenses (budget) et des recettes (taxes, impots), le secteur privé à des dépenses et des recettes, et il en va de même pour le secteur étranger. Notons <span class="math inline">\(\Delta\)</span> le différentielle entre gains et pertes de chaque secteur :</p>
+<p>D’un an sur l’autre, le secteur public a des dépenses (budget) et des recettes (taxes, impôts), le secteur privé à des dépenses et des recettes, et il en va de même pour le secteur étranger. Notons <span class="math inline">\(\Delta\)</span> le différentielle entre gains et pertes de chaque secteur :</p>
 <p><span class="math display">\[ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = \Delta masse\ monétaire\ totale \]</span></p>
-<p>En partant du principe que l’argent <em>ne sort pas de nul part</em> (nous y reviendrons) : <span class="math display">\[ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = 0\]</span></p>
+<p>En partant du principe que l’argent <em>ne sort pas de nulle part</em> (nous y reviendrons) : <span class="math display">\[ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = 0\]</span></p>
 </div>
 <div id="exemples" class="section level1">
 <h1>Exemples</h1>
@@ -97,7 +97,7 @@ ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
     scale_fill_viridis_d(labels = c(&quot;étranger&quot;, &quot;privé&quot;, &quot;publique&quot;)) + 
     labs(x = NULL, y = &quot;%PIB&quot;, title = &quot;Balances sectorielles, USA&quot;, caption = &quot;Données FRED St Louis&quot;, fill = &quot;Secteur :&quot;) +
     theme_bw(base_size = 14)</code></pre>
-<p>Ou bien, pour le Royaume-Unis, d’après le trés officiel <a href="http://obr.uk/efo/economic-fiscal-outlook-march-2018/">rapport</a> <em>Economic and fiscal outlook</em> de l’office pour la responsabilité budgétaire :</p>
+<p>Ou bien, pour le Royaume-Unis, d’après le très officiel <a href="http://obr.uk/efo/economic-fiscal-outlook-march-2018/">rapport</a> <em>Economic and fiscal outlook</em> de l’office pour la responsabilité budgétaire :</p>
 <div class="figure">
 <img src="/billet/2018-08-25-l-approche-comptable_files/obr_2018.png" alt="Balances sectorielles du Royaume-Uni" />
 <p class="caption">Balances sectorielles du Royaume-Uni</p>
@@ -106,10 +106,10 @@ ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<p>La conséquence directe de cette vérité comptable, c’est que pour qu’un des secteurs puisse être positif, il en faudra nécéssairement un qui soit négatif.</p>
+<p>La conséquence directe de cette vérité comptable, c’est que pour qu’un des secteurs puisse être positif, il en faudra nécessairement un qui soit négatif.</p>
 <p>Le secteur privé a souvent le désir d’accroître sa richesse au court du temps : pour que les ménages et entreprises soient satisfaits, ils souhaitent finir l’année un peu plus riche qu’ils ne l’ont commencé.</p>
-<p>Le cas du secteur étranger est un peu particulier. Il est généralement souhaitable qu’il soit équilibré, donc proche de 0 à terme (nous aurrons l’occasion de revenir dessus, notament dans le cas de l’Allemagne). Un des arguments à cela est qu’il ne peut, dans le monde, n’y avoir uniquement des pays exportateurs net, il en faudra a minima un qui soit importateur net !</p>
-<p>Si donc, dans le cas idéal, le secteur étranger est à l’équilibre, le secteur privé est en léger excédent pour assouvir son envie d’enrichissement, il en suit que le secteur publique devra-être déficitaire.</p>
-<p>Pour le dire autrement, imposer un excédant budgétaire publique ce fera nécéssairement au dépend du secteur étranger et/ou privé.</p>
-<p>Si on suppose un secteur étranger à l’équilibre, un excédent budgétaire publique passe par l’apauvrissement (monétaire) de la population. Ce n’est sans doute pas là une sage décision de gouvernance.</p>
+<p>Le cas du secteur étranger est un peu particulier. Il est généralement souhaitable qu’il soit équilibré, donc proche de 0 à terme (nous aurons l’occasion de revenir dessus, notamment dans le cas de l’Allemagne). Un des arguments à cela est qu’il ne peut, dans le monde, n’y avoir uniquement des pays exportateurs net, il en faudra à minima un qui soit importateur net !</p>
+<p>Si donc, dans le cas idéal, le secteur étranger est à l’équilibre, le secteur privé est en léger excédent pour assouvir son envie d’enrichissement, il en suit que le secteur public devra-être déficitaire.</p>
+<p>Pour le dire autrement, imposer un excédent budgétaire publique se fera nécessairement au dépend du secteur étranger et/ou privé.</p>
+<p>Si on suppose un secteur étranger à l’équilibre, un excédent budgétaire publique passe par l’appauvrissement (monétaire) de la population. Ce n’est sans doute pas là une sage décision de gouvernance.</p>
 </div>

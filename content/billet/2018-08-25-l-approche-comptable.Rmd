@@ -2,7 +2,7 @@
 title: L'approche comptable
 authors: 
   - Guillaume Devailly
-date: '2018-09-17'
+date: '2018-09-18'
 slug: l-approche-comptable
 tags:
   - théorie monétaire moderne
@@ -16,7 +16,7 @@ mathjax: true
 
 # La dette ! La dette ! La dette !
 
-Le secteur publique Français est en déficit budgétaire depuis au moins les années 1980.
+Le secteur public Français est en déficit budgétaire depuis au moins les années 1980.
 Chaque année, l'état doit donc s’endetter, de plus en plus, pour faire face à ses dépenses.
 Conséquence directe : la dette publique explose.
 
@@ -99,26 +99,26 @@ complété.
 
 Ce premier billet, introductif, et donc incomplet et simplificateur, vous propose d'établir une compatibilité nationale 
 pour en déduire une vérité toute bête : l'argent dépensé par le gouvernement, mais non récupéré via les taxes est impôts,
-cet argent constituant précisément le déficit publiqe, où finit-il ?
+cet argent constituant précisément le déficit public, où finit-il ?
 
 Prenons l'exemple d'un pays seul utilisateur de sa monnaie, pour commencer en douceur, tels que, par exemple, la Pologne.
 La monnaie polonaise, le Zloty, est soit dans le secteur privé domestique (particuliers),
 soit dans le secteur publique (l'état polonais), soit à l'étranger.
-Les entreprises étant possédés pour partie par les polonnais, pour partie par l'état polonnais, pour partie
+Les entreprises étant possédés pour partie par les polonais, pour partie par l'état polonais, pour partie
 par des particuliers ou gouvernements étrangers, leurs avoir monétaires sont donc répartie dans les trois catégories
-définies précédements.
+définies précédemment.
 
 Ainsi :
 
 $$ secteur\ publique + secteur\ privé + secteur\ étranger = masse\ monétaire\ totale $$
 
-D'un an sur l'autre, le secteur publique à des dépenses (budget) et des recettes (taxes, impots),
+D'un an sur l'autre, le secteur public a des dépenses (budget) et des recettes (taxes, impôts),
 le secteur privé à des dépenses et des recettes, et il en va de même pour le secteur étranger. Notons
 $\Delta$ le différentielle entre gains et pertes de chaque secteur :
 
 $$ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = \Delta masse\ monétaire\ totale $$
 
-En partant du principe que l'argent *ne sort pas de nul part* (nous y reviendrons) :
+En partant du principe que l'argent *ne sort pas de nulle part* (nous y reviendrons) :
 $$ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger = 0$$
 
 # Exemples
@@ -142,7 +142,7 @@ ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
 ```{r sectorialusa, eval=FALSE}
 ```
 
-Ou bien, pour le Royaume-Unis, d'après le trés officiel
+Ou bien, pour le Royaume-Unis, d'après le très officiel
 [rapport](http://obr.uk/efo/economic-fiscal-outlook-march-2018/) *Economic and fiscal outlook* de l'office 
 pour la responsabilité budgétaire :
 
@@ -154,23 +154,23 @@ pour la responsabilité budgétaire :
 # Conclusion
 
 La conséquence directe de cette vérité comptable, c'est que pour qu'un des secteurs puisse être positif,
-il en faudra nécéssairement un qui soit négatif.
+il en faudra nécessairement un qui soit négatif.
 
 Le secteur privé a souvent le désir d'accroître sa richesse au court du temps :
 pour que les ménages et entreprises soient satisfaits, ils souhaitent finir l'année un peu plus riche
 qu'ils ne l'ont commencé.
 
 Le cas du secteur étranger est un peu particulier. Il est généralement souhaitable qu'il soit équilibré, 
-donc proche de 0 à terme (nous aurrons l'occasion de revenir dessus, notament dans le cas de l'Allemagne).
+donc proche de 0 à terme (nous aurons l'occasion de revenir dessus, notamment dans le cas de l'Allemagne).
 Un des arguments à cela est qu'il ne peut, dans le monde, n'y avoir uniquement des pays exportateurs net, il en faudra 
-a minima un qui soit importateur net !
+à minima un qui soit importateur net !
 
 Si donc, dans le cas idéal, le secteur étranger est à l'équilibre, le secteur privé est en léger excédent pour
-assouvir son envie d'enrichissement, il en suit que le secteur publique devra-être déficitaire.
+assouvir son envie d'enrichissement, il en suit que le secteur public devra-être déficitaire.
 
-Pour le dire autrement, imposer un excédant budgétaire publique ce fera nécéssairement au dépend du secteur étranger et/ou privé.
+Pour le dire autrement, imposer un excédent budgétaire publique se fera nécessairement au dépend du secteur étranger et/ou privé.
 
-Si on suppose un secteur étranger à l'équilibre, un excédent budgétaire publique passe par l'apauvrissement (monétaire) de la population. Ce n'est sans doute pas là une sage décision de gouvernance.
+Si on suppose un secteur étranger à l'équilibre, un excédent budgétaire publique passe par l’appauvrissement  (monétaire) de la population. Ce n'est sans doute pas là une sage décision de gouvernance.
 
 
 
