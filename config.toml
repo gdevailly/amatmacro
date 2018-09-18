@@ -5,6 +5,7 @@ title = "amatmacro"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "hugo-theme-even"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 preserveTaxonomyNames = true
 hasCJKLanguage = false     # has chinese/japanese/korean ?
