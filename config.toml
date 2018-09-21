@@ -31,7 +31,7 @@ copyright = ""            # default: author.name ↓
   name = "Archives"
   weight = 20
   identifier = "archives"
-  url = "/billet/"
+  url = "/post/"
 [[menu.main]]
   name = "Catégories"
   weight = 30
@@ -53,6 +53,11 @@ copyright = ""            # default: author.name ↓
   logoTitle = ""        # default: the title value  
   keywords = ["Hugo", "theme","even"]
   description = "Hugo theme even example site."
+  
+  # Set to true to disable code folding
+  disable_codefolding = false
+  # Set to "hide" or "show" all codes by default
+  codefolding_show = "hide"
 
   # paginate of archives, tags and categories             
   archivePaginate = 5
@@ -88,7 +93,7 @@ copyright = ""            # default: author.name ↓
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  customCSS = []
+  customCSS = ["override.css"]
   customJS = []
 
   [params.publicCDN]        # load these files from public cdn                       

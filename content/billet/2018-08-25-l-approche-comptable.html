@@ -2,7 +2,7 @@
 title: L'approche comptable
 authors: 
   - Guillaume Devailly
-date: '2018-09-18'
+date: 2018-09-21
 slug: l-approche-comptable
 tags:
   - théorie monétaire moderne
@@ -10,8 +10,9 @@ tags:
   - MMT
   - Eurostat
   - FRED
-type: "post"
+type: post
 mathjax: true  
+
 ---
 
 
@@ -19,49 +20,14 @@ mathjax: true
 <div id="la-dette-la-dette-la-dette" class="section level1">
 <h1>La dette ! La dette ! La dette !</h1>
 <p>Le secteur public Français est en déficit budgétaire depuis au moins les années 1980. Chaque année, l’état doit donc s’endetter, de plus en plus, pour faire face à ses dépenses. Conséquence directe : la dette publique explose.</p>
-<p><img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/deficitanddebt-1.png" width="672" /></p>
-<pre class="r"><code>library(tidyverse)
-library(eurostat)
-
-# eurostat data
-govdebt &lt;- get_eurostat(&quot;gov_10dd_edpt1&quot;) %&gt;% # found with search_eurostat(&quot;deficit&quot;)
-    filter(geo == &quot;FR&quot;, unit == &quot;PC_GDP&quot;) %&gt;% # France, in %GDP 
-    select(-unit) %&gt;%
-    label_eurostat()
-
-# deficit plot
-frdeficit &lt;- govdebt %&gt;%
-    filter(na_item == &quot;Net lending (+) /net borrowing (-)&quot;, sector == &quot;General government&quot;)
-
-pldeficit &lt;- ggplot(frdeficit, aes(x = time, y = values)) +
-    geom_ribbon(aes(ymin = 0, ymax = values), fill = &quot;#FF707070&quot;) +
-    geom_hline(yintercept = 0, linetype = &quot;dashed&quot;) +
-    geom_line(size = 1.5, color = &quot;darkred&quot;) +
-    labs(x = NULL, y = &quot;%PIB&quot;, title = &quot;Déficit budgétaire français&quot;) +
-    coord_cartesian(ylim = c(-8, 2)) +
-    theme_bw(base_size = 14)
-
-# debt plot
-frdebt &lt;- govdebt %&gt;%
-    filter(na_item == &quot;Government consolidated gross debt&quot;, sector == &quot;General government&quot;)
-
-pldebt &lt;- ggplot(frdebt, aes(x = time, y = values)) +
-    geom_ribbon(aes(ymin = 0, ymax = values), fill = &quot;#70007070&quot;) +
-    geom_hline(yintercept = 0, linetype = &quot;dashed&quot;) +
-    geom_line(size = 1.5, color = &quot;#700070&quot;) +
-    labs(x = NULL, y = &quot;%PIB&quot;, title = &quot;Dette publique française&quot;, caption = &quot;Données eurostat&quot;) +
-    coord_cartesian(ylim = c(-10, 110)) +
-    theme_bw(base_size = 14)
-
-cowplot::plot_grid(pldeficit, pldebt, ncol = 1, align = &quot;v&quot;)</code></pre>
-<p>Il semble donc urgent de réduire les dépenses de l’état, augmenter ses recettes, afin commencer à rembourser une dette que nous ne voulons pas laisser cette dette à nos petits-enfants. Sinon, <em>la dette se vengera</em> !</p>
-<blockquote class="twitter-tweet" data-lang="fr">
-<p lang="fr" dir="ltr">
-“La dette se vengera” si le gouvernement ne gagne pas “la bataille du désendettement”, met en garde Pierre Moscovici<a href="https://t.co/c20qHKATVd">https://t.co/c20qHKATVd</a> <a href="https://t.co/wadGpfaiI4">pic.twitter.com/wadGpfaiI4</a>
+<div class="figure" style="text-align: center"><span id="fig:deficitanddebt"></span>
+<img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/deficitanddebt-1.png" alt="Déficit publique (en haut) et dette publique (en bas) de la France, exprimés en pourcentages du PIB." width="672" />
+<p class="caption">
+Figure 1: Déficit publique (en haut) et dette publique (en bas) de la France, exprimés en pourcentages du PIB.
 </p>
-— franceinfo (<span class="citation">@franceinfo</span>) <a href="https://twitter.com/franceinfo/status/1032568130403479553?ref_src=twsrc%5Etfw">23 août 2018</a>
-</blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<p>Il semble donc urgent de réduire les dépenses de l’état, augmenter ses recettes, afin commencer à rembourser une dette que nous ne voulons pas laisser cette dette à nos petits-enfants. Sinon, <em>la dette se vengera</em> !</p>
+{{% tweet "1032568130403479553" %}}
 </div>
 <div id="hypocrites" class="section level1">
 <h1>Hypocrites</h1>
@@ -86,23 +52,19 @@ cowplot::plot_grid(pldeficit, pldebt, ncol = 1, align = &quot;v&quot;)</code></p
 <div id="exemples" class="section level1">
 <h1>Exemples</h1>
 <p>Il s’agit là d’une vérité comptable, vérifiable et vérifié. Par exemple, en ce qui concerne les Etats-Unis d’Amériques (d’après des données de la <em>FRED</em> de <a href="https://fred.stlouisfed.org/graph/?graph_id=480953">Saint-Louis</a>)</p>
-<p><img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/sectorialusa-1.png" width="672" /></p>
-<pre class="r"><code># csv downloaded from https://fred.stlouisfed.org/graph/?graph_id=480953
-sector_usa &lt;- read_csv(&quot;fredgraph.csv&quot;)
-colnames(sector_usa) &lt;- c(&quot;date&quot;, &quot;private&quot;, &quot;foreign&quot;, &quot;publique&quot;) # renaming coloumns
-sector_usa &lt;- gather(sector_usa, key = &quot;sector&quot;, value = &quot;pctPIB&quot;, -date) # tidying
-ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
-    geom_area() +
-    geom_hline(yintercept = 0, linetype = &quot;dashed&quot;) +
-    scale_fill_viridis_d(labels = c(&quot;étranger&quot;, &quot;privé&quot;, &quot;publique&quot;)) + 
-    labs(x = NULL, y = &quot;%PIB&quot;, title = &quot;Balances sectorielles, USA&quot;, caption = &quot;Données FRED St Louis&quot;, fill = &quot;Secteur :&quot;) +
-    theme_bw(base_size = 14)</code></pre>
-<p>Ou bien, pour le Royaume-Unis, d’après le très officiel <a href="http://obr.uk/efo/economic-fiscal-outlook-march-2018/">rapport</a> <em>Economic and fiscal outlook</em> de l’office pour la responsabilité budgétaire :</p>
-<div class="figure">
-<img src="/billet/2018-08-25-l-approche-comptable_files/obr_2018.png" alt="Balances sectorielles du Royaume-Uni" />
-<p class="caption">Balances sectorielles du Royaume-Uni</p>
+<div class="figure" style="text-align: center"><span id="fig:sectorialusa"></span>
+<img src="/billet/2018-08-25-l-approche-comptable_files/figure-html/sectorialusa-1.png" alt="Balances sectorielles aux USA, exprimés en pourcentages du PIB." width="672" />
+<p class="caption">
+Figure 2: Balances sectorielles aux USA, exprimés en pourcentages du PIB.
+</p>
 </div>
-<p>(Avec: <em>public</em> = secteur publique, <em>households</em> + <em>Corporate</em> = secteur privé, <em>rest of world</em> = secteur étranger, <em>discrepency</em> = anomalies résiduelles liés aux érreures d’éstimations.)</p>
+<p>Ou bien, pour le Royaume-Unis, d’après le très officiel <a href="http://obr.uk/efo/economic-fiscal-outlook-march-2018/">rapport</a> <em>Economic and fiscal outlook</em> de l’office pour la responsabilité budgétaire :</p>
+<div class="figure" style="text-align: center"><span id="fig:sectorialuk"></span>
+<img src="/billet/2018-08-25-l-approche-comptable_files/obr_2018.png" alt="Balances sectorielles au Royaume-Uni, exprimés en pourcentages du PIB. *Public* : secteur publique, *Households* + *Corporate* = secteur privé, *Rest of world* : secteur étranger, *Discrepency* : anomalies résiduelles liés aux érreures d'éstimations, *Forecast* : prévisions."  />
+<p class="caption">
+Figure 3: Balances sectorielles au Royaume-Uni, exprimés en pourcentages du PIB. <em>Public</em> : secteur publique, <em>Households</em> + <em>Corporate</em> = secteur privé, <em>Rest of world</em> : secteur étranger, <em>Discrepency</em> : anomalies résiduelles liés aux érreures d’éstimations, <em>Forecast</em> : prévisions.
+</p>
+</div>
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
@@ -112,4 +74,6 @@ ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
 <p>Si donc, dans le cas idéal, le secteur étranger est à l’équilibre, le secteur privé est en léger excédent pour assouvir son envie d’enrichissement, il en suit que le secteur public devra-être déficitaire.</p>
 <p>Pour le dire autrement, imposer un excédent budgétaire publique se fera nécessairement au dépend du secteur étranger et/ou privé.</p>
 <p>Si on suppose un secteur étranger à l’équilibre, un excédent budgétaire publique passe par l’appauvrissement (monétaire) de la population. Ce n’est sans doute pas là une sage décision de gouvernance.</p>
+<hr />
+<p><em>Le code <code>R</code> utilisé pour générer certains graphiques est disponible sur <a href="https://github.com/gdevailly/amatmacro/blob/master/content/billet/2018-08-25-l-approche-comptable.Rmd">GitHub</a>.</em></p>
 </div>

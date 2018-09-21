@@ -2,7 +2,7 @@
 title: L'approche comptable
 authors: 
   - Guillaume Devailly
-date: '2018-09-18'
+date: 2018-09-21
 slug: l-approche-comptable
 tags:
   - théorie monétaire moderne
@@ -10,9 +10,16 @@ tags:
   - MMT
   - Eurostat
   - FRED
-type: "post"
+type: post
 mathjax: true  
+
 ---
+
+```{r echo=FALSE}
+library(knitr)
+library(svglite)
+opts_chunk$set(fig.align = "center", echo=FALSE, warning=FALSE, message=FALSE)
+```
 
 # La dette ! La dette ! La dette !
 
@@ -20,7 +27,7 @@ Le secteur public Français est en déficit budgétaire depuis au moins les ann�
 Chaque année, l'état doit donc s’endetter, de plus en plus, pour faire face à ses dépenses.
 Conséquence directe : la dette publique explose.
 
-```{r deficitanddebt, echo=FALSE, warning=FALSE, message=FALSE}
+```{r deficitanddebt, fig.height=6, fig.cap="Déficit publique (en haut) et dette publique (en bas) de la France, exprimés en pourcentages du PIB."}
 library(tidyverse)
 library(eurostat)
 
@@ -54,19 +61,16 @@ pldebt <- ggplot(frdebt, aes(x = time, y = values)) +
     coord_cartesian(ylim = c(-10, 110)) +
     theme_bw(base_size = 14)
 
-cowplot::plot_grid(pldeficit, pldebt, ncol = 1, align = "v")
-```
-```{r deficitanddebt, eval=FALSE}
+cowplot::plot_grid(pldeficit, pldebt, ncol = 1, align = "hv")
 ```
 
 Il semble donc urgent de réduire les dépenses de l'état, augmenter ses recettes,
 afin commencer à rembourser une dette que nous ne voulons pas laisser cette dette à nos petits-enfants.
 Sinon, *la dette se vengera* !
 
-<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">&quot;La dette se vengera&quot; si le gouvernement ne gagne pas &quot;la bataille du désendettement&quot;, met en garde Pierre Moscovici<a href="https://t.co/c20qHKATVd">https://t.co/c20qHKATVd</a> <a href="https://t.co/wadGpfaiI4">pic.twitter.com/wadGpfaiI4</a></p>&mdash; franceinfo (@franceinfo) <a href="https://twitter.com/franceinfo/status/1032568130403479553?ref_src=twsrc%5Etfw">23 août 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
+```{r tweet}
+blogdown::shortcode("tweet", "1032568130403479553")
+```
 
 # Hypocrites
 
@@ -126,30 +130,28 @@ $$ \Delta secteur\ publique + \Delta secteur\ privé + \Delta secteur\ étranger
 Il s'agit là d'une vérité comptable, vérifiable et vérifié. Par exemple, en ce qui concerne les Etats-Unis d'Amériques
 (d'après des données de la *FRED* de [Saint-Louis](https://fred.stlouisfed.org/graph/?graph_id=480953))
 
-```{r sectorialusa, echo=FALSE, warning=FALSE, message=FALSE}
+```{r sectorialusa, fig.cap="Balances sectorielles aux USA, exprimés en pourcentages du PIB."}
 # csv downloaded from https://fred.stlouisfed.org/graph/?graph_id=480953
-sector_usa <- read_csv("fredgraph.csv")
+sector_usa <- read_csv("../../static/data/fredgraph.csv")
 colnames(sector_usa) <- c("date", "private", "foreign", "publique") # renaming coloumns
 sector_usa <- gather(sector_usa, key = "sector", value = "pctPIB", -date) # tidying
 ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
-    geom_area() +
+    geom_area(alpha = 1) +
     geom_hline(yintercept = 0, linetype = "dashed") +
     scale_fill_viridis_d(labels = c("étranger", "privé", "publique")) + 
     labs(x = NULL, y = "%PIB", title = "Balances sectorielles, USA", caption = "Données FRED St Louis", fill = "Secteur :") +
     theme_bw(base_size = 14)
 
 ```
-```{r sectorialusa, eval=FALSE}
-```
+
 
 Ou bien, pour le Royaume-Unis, d'après le très officiel
 [rapport](http://obr.uk/efo/economic-fiscal-outlook-march-2018/) *Economic and fiscal outlook* de l'office 
 pour la responsabilité budgétaire :
 
-![Balances sectorielles du Royaume-Uni](/billet/2018-08-25-l-approche-comptable_files/obr_2018.png)
-
-(Avec: *public* = secteur publique, *households* + *Corporate* = secteur privé, *rest of world* = secteur étranger,
-*discrepency* = anomalies résiduelles liés aux érreures d'éstimations.)
+```{r sectorialuk, fig.cap="Balances sectorielles au Royaume-Uni, exprimés en pourcentages du PIB. *Public* : secteur publique, *Households* + *Corporate* = secteur privé, *Rest of world* : secteur étranger, *Discrepency* : anomalies résiduelles liés aux érreures d'éstimations, *Forecast* : prévisions."}
+knitr::include_graphics("/billet/2018-08-25-l-approche-comptable_files/obr_2018.png")
+```
 
 # Conclusion
 
@@ -170,7 +172,9 @@ assouvir son envie d'enrichissement, il en suit que le secteur public devra-êtr
 
 Pour le dire autrement, imposer un excédent budgétaire publique se fera nécessairement au dépend du secteur étranger et/ou privé.
 
-Si on suppose un secteur étranger à l'équilibre, un excédent budgétaire publique passe par l’appauvrissement  (monétaire) de la population. Ce n'est sans doute pas là une sage décision de gouvernance.
+Si on suppose un secteur étranger à l'équilibre, un excédent budgétaire publique passe par l’appauvrissement 
+(monétaire) de la population. Ce n'est sans doute pas là une sage décision de gouvernance.
 
-
-
+---
+*Le code `R` utilisé pour générer certains graphiques est disponible sur
+[GitHub](https://github.com/gdevailly/amatmacro/blob/master/content/billet/2018-08-25-l-approche-comptable.Rmd).*
