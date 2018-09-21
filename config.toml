@@ -10,7 +10,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 hasCJKLanguage = false     # has chinese/japanese/korean ?
 paginate = 5                                             
-disqusShortname = "guillaumedevailly"      # disqus_shortname
+disqusShortname = "amatmacro"      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓       
 
