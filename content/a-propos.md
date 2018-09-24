@@ -18,7 +18,7 @@ Il m'a permis de découvrir le formidable Bill Mitchell, professeur australien d
 [nombreux billets](http://bilbo.economicoutlook.net/blog/),
 détaillés et quotidiens, impressionnent d'érudition et d'impertinence.
 
-Frédèric Lordon et son style virtuose, inégalable, m'a retourné sur bon nombres de sujets.
+Frédéric Lordon et son style virtuose, inégalable, m'a retourné sur bon nombres de sujets.
 On pourra lire, par exemple, son article ["Et si on fermait la bourse"](https://www.monde-diplomatique.fr/2010/02/LORDON/18789).
 
 François Leclerc ne manque pas de suivre l'actualité politique, climatique, migratoire, nucléaire, pour
