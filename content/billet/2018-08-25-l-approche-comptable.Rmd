@@ -145,12 +145,13 @@ de [Saint-Louis](https://fred.stlouisfed.org/graph/?graph_id=480953)) :
 ```{r sectorialusa, fig.cap="Balances sectorielles aux USA, exprimés en pourcentages du PIB."}
 # csv downloaded from https://fred.stlouisfed.org/graph/?graph_id=480953
 sector_usa <- read_csv("../../static/data/fredgraph.csv")
-colnames(sector_usa) <- c("date", "private", "foreign", "publique") # renaming coloumns
-sector_usa <- gather(sector_usa, key = "sector", value = "pctPIB", -date) # tidying
+colnames(sector_usa) <- c("date", "foreign",  "private", "public") # renaming coloumns
+sector_usa <- gather(sector_usa, key = "sector", value = "pctPIB", -date) %>% # tidying
+    mutate(sector = factor(sector, levels = c( "private", "foreign", "public")))
 ggplot(sector_usa, aes(x = date, y = pctPIB, fill = sector)) + # ploting
     geom_area(alpha = 1) +
     geom_hline(yintercept = 0, linetype = "dashed") +
-    scale_fill_viridis_d(labels = c("étranger", "privé", "publique")) + 
+    scale_fill_viridis_d(labels = c("privé", "étranger", "public")) + 
     labs(x = NULL, y = "%PIB", title = "Balances sectorielles, USA", caption = "Données FRED St Louis", fill = "Secteur :") +
     theme_bw(base_size = 14)
 
