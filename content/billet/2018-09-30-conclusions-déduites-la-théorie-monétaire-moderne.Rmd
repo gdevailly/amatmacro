@@ -50,7 +50,7 @@ Il en découle aussi que l’hypothèse de « l’asséchement », formulée par
 (c’est-à-dire l’idée que les emprunts gouvernementaux assèchent le secteur privé de fonds rares,
 qui aurait pu être disponibles aux entreprises) est une idée absurde.
 Les banques commerciales donneront des prêts à la demande de tout emprunteur qu’elles estimeront capable de rembourser.
-Les emprunts d’états ne sont pas en concurrence avec le crédit aux entreprises ou au ménage.
+Les emprunts d’états ne sont pas en concurrence avec le crédit aux entreprises ou aux ménages.
 
 4.	Les comptes nationaux nous indiquent qu’un déficit budgétaire gouvernemental implique
 nécessairement un excédent budgétaire du secteur non-gouvernemental,
@@ -59,7 +59,7 @@ Le secteur non gouvernemental est constitué du secteur privé domestique et du 
 S’il y a un déficit extérieur et que le secteur privé domestique désir épargner,
 le gouvernement devra être en déficit budgétaire.
 C’est-à-dire que les surplus budgétaires gouvernementaux réduisent la richesse du secteur non-gouvernemental.
-La notion « orthodoxe » que les surplus budgétaires constitut un « épargne nationale » est fausse.
+La notion « orthodoxe » que les surplus budgétaires constituent une « épargne nationale » est fausse.
 Un simple utilisateur de la monnaie, tel qu’un ménage, épargne (se prive de consommations présentes)
 pour pouvoir profiter de possibilités de consommations futures plus importantes
 (entre autres via les intérêts de ses comptes d’épargnes).
@@ -71,9 +71,9 @@ Il est de s’assurer que le niveau de dépense du gouvernement est suffisant po
 à la fois le plein-emploi et la stabilité des prix, **après avoir pris en compte** les taux de dépenses
 et d’épargnes des acteurs du secteur non gouvernemental.
 En partant d’une situation nationale particulière, si le secteur privé désir globalement épargner plus,
-et pour cela réduit le niveau de ses dépenses, et à moins que le niveau d’exportations nets ne suffise à compenser,
+et pour cela réduit le niveau de ses dépenses, et à moins que le niveau net d’exportation ne suffise à compenser,
 le gouvernement devra augmenter son déficit pour éviter une montée du chômage et un risque de récession.
-Il n’y a pas de taux de déficit ou d’excédent budgétaire idéal dans l’absolue,
-tout dépend du contexte, des désirs du secteurs non gouvernemental.
+Il n’y a pas de taux de déficit ou d’excédent budgétaire idéal dans l’absolu,
+tout dépend du contexte, des désirs du secteur non gouvernemental.
 
 Ces notions commencent à être acceptées par certains économistes orthodoxes, dans le sens où certains disent que la Théorie Monétaire Moderne ne contient pas d’idée nouvelle.
