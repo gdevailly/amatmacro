@@ -1,0 +1,150 @@
+---
+title: L'argent des contribuables, la dette de nos enfants
+author: Guillaume Devailly
+date: '2019-02-05'
+slug: l-argent-des-contribuables-la-dette-de-nos-enfants
+tags:
+  - MMT
+  - théorie monétaire moderne
+  - billet d'humeur
+type: post
+---
+
+```{r echo=FALSE}
+library(knitr)
+library(svglite)
+opts_chunk$set(fig.align = "center", echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+Un billet d'humeur, parce que *ça déborde*.
+
+Les deux gouttes d'eau qui font que ça déborde *aujourd'hui*, parmi les litres que nous avons dû encaisser précédemment :
+
+# Les riches paient trop d’impôts en France
+
+Énième *édito éco* d'un éditorialiste du journal *Les Echos* sur [une radio](https://www.radioclassique.fr/radio/emissions/la-matinale-economique/l-edito-economique/) (émission du mardi 5 Février, mais ne perdez pas de temps à la ré-écouter), pour bien se mettre en forme dès le matin au réveil.
+Si la chronique n'est pas centrée sur ce sujet (mais sur les niches fiscales), François Vidal en profite pour glisser une petite phrase du type : les citoyens les plus riches paient déjà trop d’impôts en France (l'auteur cite que ces *riches* paient déjà 70% de l'impôt sur le revenu en France).
+
+Je comprends mal
+comment une personne *a priori* compétente puisse défendre une telle position. Ainsi, *les riches* pairaient *déjà* trop d’impôts en France ?
+
+Je me demande si M. Vidal a déjà entendu parler de Thomas Piketty, économiste français raisonnablement bien connu pour ses travaux sur les
+inégalités.
+Thomas Piketty publiait, il y a 8 ans déjà, ce graphique représentant le taux d'imposition moyen **réel** des ménages
+en fonctions de leurs revenus :
+
+```{r piketty2011, fig.cap="Taux d'imposition réel moyen des individus en fonction de leur niveau de revenu. Source: Landay, Piketty, Saez, image ici tiré d'un billet de [Freakonometrics](https://freakonometrics.hypotheses.org/50129)."}
+knitr::include_graphics("/billet/2019-02-05-l-argent-des-contribuables-la-dette-de-nos-enfants_files/revol-fiscale.png")
+```
+
+Les conclusions à tirer d'un tel graphique :
+
+* L'impôt (réel) en France n'est progressif que pour la moitié la plus pauvre de la population.
+
+* Pour la moitié la plus riche, le taux d'imposition réel est stable, 
+soit **en pratique** une *flat tax*,  un impôt non progressif.
+
+* Le dernier percentile de revenus, soit précisément *les riches*,
+sont ceux qui payent le moins d’impôt en France (en proportion de leur revenu). En France, le taux d'imposition réel n'est donc 
+progressif, ni même constant pour tout le monde. Non, il est littéralement régressif, les plus riches 
+sont ceux qui payent, en proportion de leurs revenus, le moins d’impôts.
+
+Donc non, les riches ne payent pas trop d'impôts en France, ils en payent trop peu.
+Il est donc inopportun de [baisser encore plus l'impôt payé par les plus riches](https://www.lemonde.fr/politique/article/2018/10/12/les-ultrariches-grands-gagnants-de-la-fiscalite-macron_5368373_823448.html). 
+
+Pour un même graphique sur des données de 2018, voir [Bozio et al., 2018](https://wid.world/document/trois-decennies-inegalites-et-redistribution-en-france-1990-2018-wid-world-issue-brief-2018-2/) (pdf, figure 3):
+
+
+```{r piketty2018, fig.cap="Taux d'imposition réel moyen des individus en fonction de leur niveau de revenu en 2018."}
+knitr::include_graphics("/billet/2019-02-05-l-argent-des-contribuables-la-dette-de-nos-enfants_files/revol-fiscale-2018.png")
+```
+
+# L'argent des contribuables, la dette de nos enfants
+
+Emmanuel Macron, lors de l'une de ses rencontres avec les maires de France, s'est vu reproché
+la baisse de la dotation de l'État aux communes de France. Une maire se voyait contrainte de 
+fermer la salle de spectacle municipale.
+La réponse d'Emmanuel Macron, répétée en boucle depuis 
+des semaines,  est qu'il n'y a que deux sources
+permettant de financer les dépenses publiques,
+"(1) l'argent des contribuables et (2) la dette de nos enfants" (cité de mémoire d'après le flash-info de France Musique de 7h du 05/02/2019). 
+
+Et que donc, *poum pam poum, boum badaboum*, il fallait bien baisser les dépenses publiques.
+
+Il est déprimant de voir de telles personnes, *a priori* brillantes, 
+s’abîmer dans un raisonnement si hypocrite.
+
+Même en restant *dans le cadre*, il est facile de démonter le raisonnement tenu par Emmanuel Macron
+(et malheureusement encore partagé par bon nombre de nos concitoyens).
+
+* (1) Comme nous l'avons vu dans la première partie de ce billet,
+il existe des contribuables qui ont encore de l'argent, et pas qu'un peu, et qui devraient, pour
+une simple raison de justice fiscale, en payer plus.
+
+* (2) Nous ne léguons pas qu'une dette publique à nos enfants et nos petits-enfants, nous leur léguons
+avant tout une planète et des infrastructures. Demandons donc à nos enfants ce qu'ils préfèrent :
+
+Ne plus aller aux spectacles à la mairie  **ou** emprunter un
+[OAT](https://fr.wikipedia.org/wiki/Obligation_assimilable_du_Tr%C3%A9sor)
+Français **à des taux négatifs**
+(c'est à dire qu'en ce moment, quand l'État Français emprunte 1000€ sur 1 ans,
+il ne doit en rembourser que 995€, **taux d’intérêt  inclus**)(Voir les
+[taux d'intérêts des OAT Français](https://www.banque-france.fr/statistiques/taux-et-cours/taux-indicatifs-des-bons-du-tresor-et-oat)
+au 1er Février 2019) ?
+
+Subir un réchauffement climatique irréfréné **ou** 
+vivre dans un pays avec un taux d'endettement de 150% du PIB 
+(rappelons que le Japon est actuellement endetté à 220% de son PIB, 
+et qu'il attend encore de voir se présenter la moindre inflation,
+pour ne rien dire d'une éventuelle hyperinflation) ?
+
+Entre monde de merde et dette publique, je préfère léguer à mes enfants de la dette publique.
+Il faut cesser l'hypocrisie consistant à ne parler que de la 
+*dette publique que nous léguons à nos petits-enfants*, sans mettre de l'autre côté de 
+la balance l'État de la planète, l’étendue de nos connaissances,
+et le développement de nos infrastructures que nous leur cédons en même temps.
+
+En sortant du *cadre autorisé*, et en adoptant plutôt celui proposé par la Théorie
+Monétaire Moderne (MMT), on peut aussi ajouter qu'Emmanuel Macron se trompe lorsqu'il n'identifie
+que deux sources possibles de financements pour l'État. Il y a :
+
+* (3) la création monétaire. Sortez un billet, qu'est-il écrit dessus ? "taxe des contribuables" ?
+"dette de mes petits-enfants" ?
+Non, si vous êtes en France, il y a écrit BCE, pour Banque Centrale Européenne. 
+Ce n'est pas l'argent des contribuables qui finance la BCE.
+C'est l'argent de la BCE qui finance les contribuables.
+Ou pour le dire autrement : ce sont moins les contribuables qui financent l'État
+que l'État qui finance les contribuables.
+
+(Les banques commerciales jouent aussi un rôle de création monétaire important, 
+lorsqu'elles accordent des prêts, mais sous les règles et conditions établies par la Banque Centrale.
+Règles et conditions qui donc peuvent changer, et auxquelles elles doivent obéir.)
+
+L'État possède le monopole *régulateur* de l'émission monétaire.
+L'analogie consistant à analyser le budget d'un État émetteur de sa monnaie, avec celui
+d'un ménage, simple utilisateur de la monnaie, est trompeuse. Je le mentionnai sur
+[Twitter](https://twitter.com/Billbis_/status/1084024853710204928) 
+il y a quelques temps, et je vais le reprendre ici.
+
+La Théorie Monétaire Moderne propose plutôt l'analogie du manège.
+
+Un manège doit **d'abord** distribuer des tickets de manège, avant de pouvoir les récupérer.
+Ce ne sont pas les usagers qui commencent par apporter des tickets au manège, c'est le manège qui
+commence à distribuer les tickets aux usagers.
+Le manège peut être le seul émetteur de ses tickets de manèges,
+ou de tels tickets peuvent être vendu ailleurs, mais il est le *seul* à décider de ce qui 
+est un ticket valide ou de ce qui n'est qu'un faux ticket.
+
+Un manège peut toujours distribuer autant de tickets de manège qu'il le souhaite. Il peut manquer de place sur le manège, mais il n'y a pas de limite intrinsèque sur le nombre de ticket qu'il peut émettre.
+
+De même, un État souverain monétairement peut émettre autant d'argent qui le souhaite. Il peut ne pas y avoir assez de ressources réelles disponibles (ce qui créera de l'inflation), mais il n'y a aucune limite intrinsèque à son déficit budgétaire.
+
+Pour un manège, n'avoir que 6 tickets disponibles pour un manège de 10 places est une stratégie débile. Le manège sera sous-utilisé. Le manège devrait émettre suffisamment de tickets pour s'assurer de remplir toutes les places. Si des gens gardent des tickets de manège chez eux pour plus tard, le manège doit en émettre d'autres pour compenser. Si quelques personnes *épargnent* 50 tickets de manège chez eux pour plus tard, le manège devrait émettre d'autres tickets, même s'il n'a que 10 places disponibles, pour s'assurer un taux d'occupation idéal.
+
+De même, les dépenses budgétaires d'un État devraient être à un niveau suffisant pour assurer le plein emploi (par exemple via un système d'employeur de dernier recours). Si des gens souhaitent épargner, le déficit budgétaire de l'État doit être suffisant pour satisfaire cette envie d'épargner.
+
+Le manège doit émettre suffisamment de tickets pour remplir le manège, mais pas trop pour limiter le temps d'attente avant de pouvoir avoir une place et satisfaire ses usagers.
+
+Un État doit avoir un budget suffisant pour assurer le plein emploi, tout en le limitant pour ne pas créer (trop) de sur-inflation. Le niveau de déficit budgétaire idéal d'un État dépend du taux de chômage et du taux d'inflation. Pas du taux d'endettement de cet État. 
+
+Bien sûr, un même niveau de dépense de l'État aura des conséquences différentes sur l'inflation et le taux d'emploi selon la nature des dépenses publiques : investissement vs crédit d'impôts, sécurité sociale vs baisse d'impôts, lutte contre la pauvreté vs "attractivité". Pour un taux d’occupation du manège satisfaisant, il vaut mieux distribuer 2 tickets à 10 personnes que 50 tickets à une seule.
